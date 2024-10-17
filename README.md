@@ -1,34 +1,88 @@
-# ICLR 2024 OpenReivew Submission Data
+# OpenReview Visualization
 
-This repository contains the downloading and parsing code for the ICLR 2024 OpenReview data. The data is downloaded from the [ICLR 2024 OpenReview website](https://openreview.net/group?id=ICLR.cc/2024/Conference) with the [OpenReview API](https://docs.openreview.net/reference/api-v2/).
+This repository contains tools for downloading, parsing, and visualizing OpenReview submission data for various academic conferences, including ICLR 2024 and ICLR 2025. The data is downloaded using the [OpenReview API](https://docs.openreview.net/reference/api-v2/).
+
+## Supported Conferences
+
+| Conference | Nomic Visualization | Gradio Review Table | Word Cloud |
+| ---------- | ------------------ | ------------------ | ---------- |
+| ICLR 2024 | [Link](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission) | [Link](https://huggingface.co/spaces/ranpox/iclr2024-submissions) | [Link](assets/wordcloud.png) |
+| ICLR 2025 | [Link](https://atlas.nomic.ai/data/ranpox/iclr2025) |  |  |
 
 ## Data
-- [`raw_paperlist.json`](https://github.com/ranpox/iclr2024-openreview-submissions/releases/download/v0.1/raw_paperlist.json): The raw data of the ICLR 2024 paper list.
-- [`raw_paper_reviews.jsonl`](https://github.com/ranpox/iclr2024-openreview-submissions/releases/download/v0.2/raw_paper_reviews.jsonl): The raw data of the ICLR 2024 paper reviews.
-- [`iclr2024_papers.csv`](data/iclr2024_papers.csv): The parsed ICLR 2024 CSV data contains `id`, `title`, `abstract`, `primary_area`, `keywords`, and `tldr`. Note: You can use ChatGPT code interpreter to analyze this file.
-- [`iclr2024_reviews_20231110.csv`](./data/iclr2024_reviews_20231110.csv): The parsed ICLR 2024 reviews CSV data contains ID, Title, Average Score, Standard Deviation, and Individual Scores. The list is sorted by the average score and the standard deviation.
+
+For each supported conference, we provide the following data:
+
+- Raw paper list data (JSON format)
+- Raw paper reviews data (JSONL format)
+- Parsed paper data (CSV format) containing:
+  - ID
+  - Title
+  - Abstract
+  - Primary area
+  - Keywords
+  - TLDR
+- Parsed review data (CSV format) containing:
+  - ID
+  - Title
+  - Average Score
+  - Standard Deviation
+  - Individual Scores
 
 ## Visualizations
 
-### Rating Table[[Link](https://huggingface.co/spaces/ranpox/iclr2024-submissions)]
-Gradio Demo: [https://huggingface.co/spaces/ranpox/iclr2024-submissions](https://huggingface.co/spaces/ranpox/iclr2024-submissions)
+### Interactive Visualization
+Explore submissions using an interactive visualization powered by [Nomic Atlas](https://atlas.nomic.ai/):
+
+[ICLR 2024 Viualization](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission)
+[ICLR 2025 Viualization](https://atlas.nomic.ai/data/ranpox/iclr2025)
+
+![ICLR 2024 Submissions](assets/nomic_atlas.png)
+
+### Rating Table
+We provide a Gradio demo for exploring the rating table of submissions:
+
+[ICLR 2024 Rating Table](https://huggingface.co/spaces/ranpox/iclr2024-submissions)
 
 ![Gradio Demo](assets/gradio.png)
 
-### Interactive Visualization [[Link](https://atlas.nomic.ai/map/9ec8512c-cec0-4b1b-b7f8-14abbad52e8a/20c9a572-e9b9-4188-89f4-eeb9005353e3)]
+### Statistical Visualizations
+For each conference, we generate:
 
-You can use the interactive visualization to explore the ICLR 2024 submissions. The visualization is powered by [Nomic Atlas](https://atlas.nomic.ai/).
+- Average Score Distribution
+- Average Score Cumulative Distribution
+- Top 50 Keywords Bar Chart
+- Top 50 Keywords Word Cloud
 
-[![Nomic Atlas Interactive Visualization](assets/nomic_atlas.png)](https://atlas.nomic.ai/map/9ec8512c-cec0-4b1b-b7f8-14abbad52e8a/20c9a572-e9b9-4188-89f4-eeb9005353e3)
+Example visualizations:
 
-### Average Score Distribution
 ![Average Score Distribution](assets/avg_dist.png)
+![Top 50 Keywords Word Cloud](assets/top_keywords_wordcloud.png)
 
-### Average Score Cumulative Distribution
-![Average Score Cumulative Distribution](./assets/avg_cumulative_dist.png)
+## Usage
 
-### Top 50 Keywords Bar Chart
-![Top 50 Keywords](assets/top_keywords_bar.png)
+### Download Data
 
-### Top 50 Keywords Word Cloud
-![Top 50 Keywords](assets/top_keywords_wordcloud.png)
+```
+python scripts/download_papers.py
+```
+
+### Generate Word Cloud
+
+```
+python scripts/visualize_wordcloud.py
+```
+
+### Generate Nomic Atlas Visualization
+
+```
+python scripts/visualize_nomic.py
+```
+
+## Contributing
+
+We welcome contributions to add support for more conferences or improve existing visualizations. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
