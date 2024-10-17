@@ -6,8 +6,8 @@ This repository contains tools for downloading, parsing, and visualizing OpenRev
 
 | Conference | Nomic Visualization | Gradio Review Table | Word Cloud |
 | ---------- | ------------------ | ------------------ | ---------- |
-| ICLR 2024 | [Link](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission) | [Link](https://huggingface.co/spaces/ranpox/iclr2024-submissions) | [Link](assets/wordcloud.png) |
-| ICLR 2025 | [Link](https://atlas.nomic.ai/data/ranpox/iclr2025) |  |  |
+| ICLR 2025 | [Link](https://atlas.nomic.ai/data/ranpox/iclr2025/map) |  |  |
+| ICLR 2024 | [Link](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission/map) | [Link](https://huggingface.co/spaces/ranpox/iclr2024-submissions) | [Link](assets/wordcloud.png) |
 
 ## Data
 
@@ -34,8 +34,8 @@ For each supported conference, we provide the following data:
 ### Interactive Visualization
 Explore submissions using an interactive visualization powered by [Nomic Atlas](https://atlas.nomic.ai/):
 
-[ICLR 2024 Viualization](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission)
-[ICLR 2025 Viualization](https://atlas.nomic.ai/data/ranpox/iclr2025)
+[ICLR 2024 Visualization](https://atlas.nomic.ai/data/ranpox/iclr-2024-submission/map)
+[ICLR 2025 Visualization](https://atlas.nomic.ai/data/ranpox/iclr2025/map)
 
 ![ICLR 2024 Submissions](assets/nomic_atlas.png)
 
@@ -78,11 +78,3 @@ python scripts/visualize_wordcloud.py
 ```
 python scripts/visualize_nomic.py
 ```
-
-## Contributing
-
-We welcome contributions to add support for more conferences or improve existing visualizations. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
