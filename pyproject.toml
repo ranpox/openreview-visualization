@@ -1,0 +1,24 @@
+[project]
+name = "openreview-visualization"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Yiheng Xu", email = "charlesyihengxu@gmail.com"},
+]
+dependencies = [
+    "openreview-py>=1.44.0",
+    "pip>=24.2",
+    "pandas>=2.2.3",
+    "nltk>=3.9.1",
+    "pre-commit>=3.8.0",
+    "wordcloud>=1.9.3",
+    "orjson>=3.10.7",
+    "nomic>=3.1.2",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
