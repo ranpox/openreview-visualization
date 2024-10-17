@@ -61,6 +61,12 @@ Example visualizations:
 
 ## Usage
 
+### Install
+
+```
+pip install -e .
+```
+
 ### Download Data
 
 ```
